@@ -4,7 +4,7 @@ A React Native (Expo Go) mobile app paired with a Node.js/Express/MongoDB backen
 
 ## Demo
 
-https://github.com/VarunS27/feedants/raw/main/mobile/assets/screen_rec.mp4
+https://github.com/VarunS27/Feedants_Full_Stack_Development_Internship_Technical_Assignment/raw/main/mobile/assets/screen_rec.mp4
 
 > The video shows: browsing the competition listing → opening competition details → registration flow with live seat counter → submission upload.
 
