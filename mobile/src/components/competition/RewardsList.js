@@ -5,6 +5,9 @@ import { Card } from '../ui/Card';
 import { useLanguage } from '../../providers/LanguageProvider';
 import { formatCurrency, ordinalPosition } from '../../utils/format';
 
+/** Sampled from the design's reward column. */
+const REWARD_AMOUNT = '#046B74';
+
 /** Top three get medals; the rest get a star, matching the design's reward table. */
 const PositionIcon = ({ position }) => {
   const medals = {
@@ -43,14 +46,16 @@ export const RewardsList = ({ rewards }) => {
           >
             <View className="flex-row items-center">
               <PositionIcon position={reward.position} />
-              <Text className="ml-3 text-sm text-ink">
+              <Text className="ml-3 text-sm font-bold text-ink">
                 {reward.label ||
                   `${ordinalPosition(reward.position, language)} ${
                     language === 'hi' ? 'विजेता' : 'Winner'
                   }`}
               </Text>
             </View>
-            <Text className="text-sm font-bold text-ink">{formatCurrency(reward.amount)}</Text>
+            <Text className="text-sm font-bold" style={{ color: REWARD_AMOUNT }}>
+              {formatCurrency(reward.amount)}
+            </Text>
           </View>
         ))}
       </View>

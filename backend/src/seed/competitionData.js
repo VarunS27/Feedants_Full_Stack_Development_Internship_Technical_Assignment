@@ -8,6 +8,7 @@ const DAY = 24 * HOUR;
  * the details screen is genuinely live and each lifecycle state is demonstrable.
  */
 const LITERAL_DATES = {
+  registrationOpensAt: new Date('2026-08-01T00:00:00+05:30'),
   registerBefore: new Date('2026-08-10T23:50:00+05:30'),
   submissionStarts: new Date('2026-08-06T04:00:00+05:30'),
   submissionEnds: new Date('2026-08-30T23:55:00+05:30'),
@@ -114,6 +115,7 @@ const classicalDance = (dates) => ({
 
 /** Variants that make every edge case on the screen demonstrable without waiting for time to pass. */
 const variants = (now) => {
+  // Main competition uses relative dates so the countdown is always live when seeded.
   const base = classicalDance(relativeDates(now));
 
   return [
@@ -127,7 +129,9 @@ const variants = (now) => {
         { en: 'Singing', hi: 'गायन' },
         { en: 'Multi-Win', hi: 'मल्टी-विन' },
       ],
-      // Every spot taken: the CTA must render as "Registration Full".
+      // Every spot taken: the CTA must render as "Registration Full", which only shows
+      // while the window is still open — so this one keeps live relative dates.
+      dates: relativeDates(now),
       capacity: { totalSpots: 15, bookedSpots: 15 },
       prizePool: 2500,
       entryFee: 149,

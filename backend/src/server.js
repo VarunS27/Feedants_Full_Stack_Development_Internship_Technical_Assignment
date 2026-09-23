@@ -3,8 +3,11 @@ const env = require('./config/env');
 const { connectDatabase, disconnectDatabase } = require('./config/database');
 const logger = require('./utils/logger');
 
+const autoSeed = require('./seed/autoSeed');
+
 const start = async () => {
   await connectDatabase();
+  await autoSeed();
 
   const app = createApp();
   const server = app.listen(env.port, () => {

@@ -9,9 +9,13 @@ export const JudgeCard = ({ judge, onPlayIntro }) => {
 
   return (
     <Card className="mt-3 flex-row items-center px-4 py-3.5">
+      {/* Bundled judge portrait. A required asset carries intrinsic dimensions, so the
+          56px box is pinned in style — a className size can lose to them. */}
       <Image
-        source={{ uri: judge.photoUrl }}
-        className="h-14 w-14 rounded-full bg-surface-chip"
+        source={require('../../../assets/manju.png')}
+        style={{ width: 56, height: 56, borderRadius: 28 }}
+        resizeMode="cover"
+        className="bg-surface-chip"
         accessibilityIgnoresInvertColors
       />
 

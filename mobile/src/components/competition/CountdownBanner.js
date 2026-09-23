@@ -42,7 +42,7 @@ export const CountdownBanner = ({ competition, onExpire }) => {
     <View className="mt-3 flex-row items-center rounded-card bg-primary-soft px-3 py-3">
       <MaterialCommunityIcons name="timer-sand" size={16} color="#0E6E6E" />
       {/* The label yields space; the timer must never truncate. */}
-      <Text className="ml-1.5 flex-1 text-[11px] text-ink-muted" numberOfLines={1}>
+      <Text className="ml-1.5 flex-1 text-[11px] font-bold text-black" numberOfLines={1}>
         {resolved.label}
       </Text>
 
@@ -58,8 +58,8 @@ export const CountdownBanner = ({ competition, onExpire }) => {
 
       {isUrgent && (
         <View className="flex-row items-center">
-          <Ionicons name="stopwatch-outline" size={13} color="#6B7280" />
-          <Text className="ml-0.5 text-[10px] text-ink-muted" numberOfLines={1}>
+          <Ionicons name="stopwatch-outline" size={15} color="#0E6E6E" />
+          <Text className="ml-1 text-[12px] text-primary font-bold" numberOfLines={1}>
             {t.hurryUp}
           </Text>
         </View>

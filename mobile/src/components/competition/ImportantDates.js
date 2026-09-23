@@ -15,7 +15,7 @@ const DateCell = ({ icon, label, iso, language, className = '' }) => (
       <Text className="mt-1 text-sm font-bold text-primary">
         {formatShortDate(iso, language)}
       </Text>
-      <Text className="text-xs text-ink-muted">{formatTime(iso)}</Text>
+      <Text className="text-xs text-black font-bold">{formatTime(iso)}</Text>
     </View>
   </View>
 );

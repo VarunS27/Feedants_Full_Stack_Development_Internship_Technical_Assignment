@@ -92,6 +92,8 @@ export const CompetitionDetailsScreen = ({ route, navigation }) => {
         uri: asset.uri,
         name: asset.name,
         mimeType: asset.mimeType,
+        // Present only on web, where FormData needs the real File object.
+        file: asset.file,
       });
 
       await submitEntry.mutateAsync({
